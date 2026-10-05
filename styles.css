@@ -351,7 +351,7 @@ button, input, textarea { font: inherit; }
   transform: scale(1.03) translateY(var(--hero-shift, 0px));
 }
 
-.home-header { inset: 34px 0 auto; }
+.home-header { inset: 20px 0 auto; }
 
 .home-header .nav-shell {
   width: min(1140px, calc(100vw - 80px));
