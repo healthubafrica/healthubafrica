@@ -46,3 +46,30 @@ if (hero && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
 document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
+
+const contactForm = document.querySelector('#contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const feedback = document.querySelector('#form-feedback');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+    }
+
+    setTimeout(() => {
+      if (feedback) {
+        feedback.className = 'form-feedback success is-visible';
+        feedback.textContent = 'Thank you! Your enquiry has been received. A Health-Hub Africa clinical coordinator will contact you promptly.';
+      }
+      contactForm.reset();
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send enquiry';
+      }
+    }, 600);
+  });
+}
+

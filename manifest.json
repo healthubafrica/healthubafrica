@@ -1,0 +1,21 @@
+{
+  "name": "Health-Hub Africa",
+  "short_name": "Health-Hub",
+  "description": "Responsive, connected healthcare for individuals, organisations and communities across Africa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7faf7",
+  "theme_color": "#07251c",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/assets/images/healthhub-logo-color.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -147,6 +147,35 @@ button, input, textarea { font: inherit; }
 .nav-links a:hover::after,
 .nav-links a.active::after { right: 0; }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-portal-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: var(--lime-soft);
+  color: var(--forest);
+  border: 1px solid rgba(19, 115, 51, 0.22);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -.01em;
+  transition: transform .25s var(--ease), background .25s ease, box-shadow .25s ease;
+}
+
+.patient-portal-btn:hover {
+  transform: translateY(-2px);
+  background: #d6f99c;
+  box-shadow: 0 4px 16px rgba(109, 196, 63, 0.25);
+}
+
+.patient-portal-btn svg { width: 13px; height: 13px; }
+
 .header-contact {
   display: inline-flex;
   align-items: center;
@@ -838,4 +867,229 @@ button, input, textarea { font: inherit; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition-duration: .01ms !important; }
   .reveal { opacity: 1; transform: none; }
+}
+
+/* --- Mobile Portal Link in Menu Drawer --- */
+.nav-portal-mobile {
+  display: none;
+}
+
+@media (max-width: 780px) {
+  .nav-portal-mobile {
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 24px;
+    padding: 16px 20px !important;
+    border-radius: 12px;
+    background: var(--lime-soft) !important;
+    color: var(--forest) !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    border: 1px solid rgba(19, 115, 51, 0.25);
+    box-shadow: 0 4px 14px rgba(7, 37, 28, 0.08);
+  }
+}
+
+/* --- WhatsApp Floating Action --- */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 99;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: #25d366;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.38);
+  transition: transform .25s var(--ease), box-shadow .25s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 34px rgba(37, 211, 102, 0.48);
+}
+
+.whatsapp-float svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    padding: 14px;
+    border-radius: 50%;
+  }
+  .whatsapp-float span {
+    display: none;
+  }
+}
+
+/* --- Interactive Contact & Booking Form --- */
+.contact-form-shell {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 44px;
+  box-shadow: var(--shadow);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group.full {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--forest);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--warm);
+  color: var(--ink);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(19, 115, 51, 0.12);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.form-feedback {
+  display: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-feedback.is-visible {
+  display: block;
+}
+
+.form-feedback.success {
+  background: var(--mint-wash);
+  color: var(--forest);
+  border: 1px solid var(--mint);
+}
+
+@media (max-width: 600px) {
+  .contact-form-shell {
+    padding: 28px 20px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Legal & Compliance Layout --- */
+.legal-shell {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.legal-section {
+  padding: 36px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.legal-section:last-child {
+  border-bottom: none;
+}
+
+.legal-section h2 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(22px, 3.2vw, 30px);
+  color: var(--forest);
+  margin-top: 0;
+  margin-bottom: 16px;
+  letter-spacing: -.02em;
+}
+
+.legal-section p, .legal-section li {
+  color: var(--text-soft);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.legal-section ul {
+  padding-left: 20px;
+  margin: 16px 0;
+}
+
+.legal-section li {
+  margin-bottom: 10px;
+}
+
+.legal-highlight {
+  padding: 22px 26px;
+  background: var(--mint-wash);
+  border-left: 4px solid var(--green);
+  border-radius: 0 12px 12px 0;
+  margin: 24px 0;
+}
+
+.legal-highlight p {
+  color: var(--forest);
+  margin: 0;
+  font-weight: 600;
+}
+
+/* --- 404 Error Page --- */
+.error-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.error-hero-inner {
+  max-width: 620px;
+}
+
+.error-badge {
+  display: inline-block;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(72px, 15vw, 130px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--green);
+  margin-bottom: 12px;
 }
