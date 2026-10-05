@@ -13,8 +13,14 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "/assets/images/healthhub-logo-color.png",
+      "src": "/assets/favicon.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     }
   ]
