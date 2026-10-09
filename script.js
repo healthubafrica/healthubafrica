@@ -47,6 +47,17 @@ document.querySelectorAll('[data-year]').forEach((node) => {
   node.textContent = new Date().getFullYear();
 });
 
+// Rotating hero statements
+const rotateItems = document.querySelectorAll('.hero-rotate-item');
+if (rotateItems.length > 1) {
+  let currentIndex = 0;
+  setInterval(() => {
+    rotateItems[currentIndex].classList.remove('active');
+    currentIndex = (currentIndex + 1) % rotateItems.length;
+    rotateItems[currentIndex].classList.add('active');
+  }, 5000);
+}
+
 const contactForm = document.querySelector('#contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
